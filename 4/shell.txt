@@ -1,0 +1,9 @@
+python manage.py shell
+
+Groups(num_of_students=5, surname_of_the_elder='Aristotle').save()
+
+Students(group_code=Groups.objects.get(pk=1), surname='Einstein', gender='m').save()
+
+Discipline(discipline_name='Physics').save()
+
+Exams(discipline_code=Discipline.objects.get(pk=1), group_code=Groups.objects.get(pk=1), student_id=Students.objects.get(pk=1), grade=5).save()
